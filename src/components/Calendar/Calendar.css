@@ -1,0 +1,83 @@
+.calendar {
+	max-width: 820px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	gap: 20px;
+}
+
+.title {
+	font-size: 30px;
+	text-transform: uppercase;
+}
+
+.btn {
+	padding: 8px 16px;
+	font-size: 1rem;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+	background-color: #0056b3;
+}
+
+.yellow {
+	background-color: yellow;
+}
+
+.days {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 5px;
+}
+
+.day {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	font-size: 1rem;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+.day:hover {
+	background-color: #f0f0f0;
+}
+
+.day.holiday {
+	font-size: 24px;
+	font-weight: bold;
+	animation: borderGradient 5s linear infinite;
+}
+
+@keyframes borderGradient {
+	0% {
+		border-image: linear-gradient(to right, #ff0000, #00ff00) 1; /* Начальные цвета градиента и его направление */
+	}
+	50% {
+		border-image: linear-gradient(to right, #00ff00, #ff0000) 1; /* Конечные цвета градиента и его направление */
+	}
+	100% {
+		border-image: linear-gradient(to right, #ff0000, #00ff00) 1; /* Возвращаемся к начальным цветам градиента и его направлению */
+	}
+}
+
+@media (max-width: 580px) {
+	.day.holiday {
+		font-size: 16px;
+	}
+}
